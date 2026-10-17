@@ -1,0 +1,48 @@
+@import '@fontsource-variable/archivo/wdth.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-ink font-sans text-white antialiased;
+    font-variation-settings: 'wdth' 100;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-lime;
+  }
+
+  ::selection {
+    @apply bg-lime text-ink;
+  }
+}
+
+@layer components {
+  /* Títulos em largura expandida: a assinatura tipográfica do MOVR */
+  .font-wide {
+    font-variation-settings: 'wdth' 125;
+    letter-spacing: -0.01em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
